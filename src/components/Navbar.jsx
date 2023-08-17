@@ -1,10 +1,11 @@
 import Image from "next/image";
+import MoreSection from "./MoreSection";
 
 const Navbar = () => {
   return (
     <div id="navbar" className="flex justify-center w-full px-24 pt-3">
       <div className="flex justify-between w-full items-center">
-        <section id="left" className="flex blue-text">
+        <section id="left" className="flex blue-text items-center">
           <Image
             src="/jpn_car_logo.svg"
             alt="logo"
@@ -17,16 +18,7 @@ const Navbar = () => {
             <li className="mr-4 cursor-pointer">Sell/Trade</li>
             <li className="mr-4 cursor-pointer">Finance</li>
           </ul>
-          <div className="flex items-center cursor-pointer">
-            More{" "}
-            <Image
-              src="/caret-down.svg"
-              alt="caret down icon"
-              height="8"
-              width="8"
-              className="ml-2"
-            />
-          </div>
+          <MoreSection />
         </section>
         <section id="right" className="blue-text">
           <ul className="flex items-center">

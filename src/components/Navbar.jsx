@@ -54,7 +54,7 @@ const Navbar = () => {
                 </div>
               </div>
             </li>
-            <li className="ml-8">
+            <li className="ml-8" id="svg-container">
               <Image
                 src="/heart.svg"
                 alt="heart icon"
@@ -63,7 +63,7 @@ const Navbar = () => {
                 className="stroke-red-200 cursor-pointer"
               />
             </li>
-            <li className="ml-8">
+            <li className="ml-8" id="svg-container-user">
               <Image
                 src="/user.svg"
                 alt="user icon"

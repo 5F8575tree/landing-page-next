@@ -14,3 +14,59 @@
   color: var(--blue-color);
   font-family: var(--font);
 }
+
+#svg-container {
+  position: relative;
+  display: inline-block;
+  overflow: visible; /* Hide the circular border initially */
+  transition: all 0.3s; /* Add a transition for a smoother effect */
+}
+
+#svg-container::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background-color: rgba(255, 0, 0, 0.1); /* Filled background color */
+  opacity: 0; /* Initially hidden */
+  transition: all 0.1s; /* Add a transition for a smoother effect */
+}
+
+#svg-container:hover::before {
+  width: calc(100% + 20px);
+  height: calc(100% + 20px);
+  opacity: 1; /* Show the circular border on hover */
+  cursor: pointer;
+}
+
+#svg-container-user {
+  position: relative;
+  display: inline-block;
+  overflow: visible; /* Hide the circular border initially */
+  transition: all 0.3s; /* Add a transition for a smoother effect */
+}
+
+#svg-container-user::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 255, 0.1); /* Filled background color */
+  opacity: 0; /* Initially hidden */
+  transition: all 0.1s; /* Add a transition for a smoother effect */
+}
+
+#svg-container-user:hover::before {
+  width: calc(100% + 20px);
+  height: calc(100% + 20px);
+  opacity: 1; /* Show the circular border on hover */
+  cursor: pointer;
+}

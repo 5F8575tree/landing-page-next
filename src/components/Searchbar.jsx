@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const Searchbar = () => {
   return (
     <section className="searchbar flex justify-center mt-6">
@@ -12,7 +14,7 @@ const Searchbar = () => {
               placeholder="Search by make, model, or keyword"
               className="w-full"
             />
-            <div>?</div>
+            <Image src="/search.svg" alt="search icon" width="20" height="20" />
           </div>
         </fieldset>
       </form>

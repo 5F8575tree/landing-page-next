@@ -3,7 +3,7 @@ import Image from "next/image";
 const Searchbar = () => {
   return (
     <section className="searchbar flex justify-center mt-6">
-      <form action="" className="w-full">
+      <form action="" className="w-11/12">
         <div className="relative flex items-center">
           <input
             type="text"

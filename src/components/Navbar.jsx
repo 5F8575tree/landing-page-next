@@ -8,10 +8,10 @@ const Navbar = () => {
       <div className="flex justify-between w-full items-center">
         <section id="left" className="flex blue-text items-center">
           <Image
-            src="/jpn_car_logo.svg"
+            src="/car_shop_logo.png"
             alt="logo"
-            width="50"
-            height="50"
+            width="100"
+            height="80"
             className="mx-4 cursor-pointer"
           />
           <ul className="flex items-center">

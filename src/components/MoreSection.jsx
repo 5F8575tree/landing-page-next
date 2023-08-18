@@ -1,23 +1,42 @@
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 const MoreSection = () => {
   const [openMenu, setOpenMenu] = useState(false);
 
+  // Ref to store a reference to the menu content so we can check if open and active
+  const menuRef = useRef(null);
+
+  // Variable for storing a timeout that comes into effect when a mouse enters target.
+  // This is stored in a variable so that we can also clear the timeout.
+  let timeoutId;
+
   const onHover = () => {
+    // clear any outstanding timeouts
+    clearTimeout(timeoutId);
     setOpenMenu(true);
   };
 
   const onMouseOut = () => {
-    setOpenMenu(false);
+    // cover delay between "more" link mouseLeave and menu mouseEnter
+    timeoutId = setTimeout(() => {
+      if (
+        // menu must be present in the DOM
+        menuRef.current &&
+        // cursor must not currently be on the menu content
+        !menuRef.current.contains(document.activeElement)
+      ) {
+        setOpenMenu(false);
+      }
+    }, 20);
   };
 
   return (
     <div className="relative">
       <div
         className="flex items-center cursor-pointer"
-        onMouseEnter={onHover}
-        onMouseOut={onMouseOut}
+        onMouseOver={onHover}
+        onMouseLeave={onMouseOut}
       >
         More{" "}
         <Image
@@ -30,6 +49,7 @@ const MoreSection = () => {
       </div>
       {openMenu ? (
         <div
+          ref={menuRef}
           className="
             flex
             absolute
@@ -43,7 +63,8 @@ const MoreSection = () => {
             drop-shadow
             rounded-md
             text-sm"
-          onMouseEnter={onHover}
+          onMouseOver={onHover}
+          onMouseLeave={onMouseOut}
         >
           <ul>
             <li className="hover:bg-slate-100 hover:cursor-pointer py-3 w-48 px-4">

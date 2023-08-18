@@ -70,3 +70,18 @@
   opacity: 1; /* Show the circular border on hover */
   cursor: pointer;
 }
+
+#hero-image {
+  background-image: url(/car.jpeg);
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 767px) {
+  #hero-image {
+    background-image: url(/small_car.jpeg);
+    background-size: auto;
+    background-position: top;
+    background-repeat: no-repeat;
+  }
+}

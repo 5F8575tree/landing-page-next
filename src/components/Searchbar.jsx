@@ -3,7 +3,7 @@ import Image from "next/image";
 const Searchbar = () => {
   return (
     <section className="searchbar flex justify-center mt-6">
-      <form action="" className="w-10/12">
+      <form action="" className="w-full">
         <div className="relative flex items-center">
           <input
             type="text"
@@ -11,7 +11,7 @@ const Searchbar = () => {
             placeholder="Search by make, model, or keyword"
             autocomplete="off"
             aria-label="search talk"
-            className="px-3
+            className="
               py-2
               placeholder-slate-600
               hover:placeholder-slate-300

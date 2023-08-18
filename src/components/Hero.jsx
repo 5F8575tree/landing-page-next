@@ -12,20 +12,19 @@ const Hero = () => {
   };
 
   return (
-    <div
-      className="w-screen flex-col justify-center h-screen"
-      style={containerStyle}
-    >
+    <div className="w-screen h-screen px-48 py-5" style={containerStyle}>
       <Navbar />
       <Searchbar />
-      <h2 className="text-7xl blue-text text-center pt-8 px-8 font-bold">
-        Love Your Car <br />
-        Guarantee
-      </h2>
-      <h4 className="text-xl blue-text text-center pt-2">
-        Take 30 days to love it or return it (up to 1500 mi)
-      </h4>
-      <Button />
+      <div className="h-4/6 flex flex-col items-start justify-center">
+        <h2 className="text-7xl blue-text font-bold">
+          Love Your Car <br />
+          Guarantee
+        </h2>
+        <h4 className="text-xl blue-text text-center pt-2">
+          Take 30 days to love it or return it (up to 1500 mi)
+        </h4>
+        <Button />
+      </div>
     </div>
   );
 };

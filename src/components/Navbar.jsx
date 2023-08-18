@@ -4,7 +4,7 @@ import LocationSection from "./LocationSection";
 
 const Navbar = () => {
   return (
-    <div id="navbar" className="flex justify-center w-full px-24 pt-3">
+    <div id="navbar" className="flex justify-center w-full">
       <div className="flex justify-between w-full items-center">
         <section id="left" className="flex blue-text items-center">
           <Image

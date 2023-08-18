@@ -1,5 +1,6 @@
 import Image from "next/image";
 import MoreSection from "./MoreSection";
+import LocationSection from "./LocationSection";
 
 const Navbar = () => {
   return (
@@ -22,30 +23,7 @@ const Navbar = () => {
         </section>
         <section id="right" className="blue-text">
           <ul className="flex items-center">
-            <li>
-              <div className="flex">
-                <Image
-                  src="/map-pin.svg"
-                  alt="map pin icon"
-                  width="20"
-                  height="20"
-                  className="mr-3 cursor-pointer"
-                />
-                <div className="flex-col cursor-pointer">
-                  <p className="text-xs font-light">Your store for 66204</p>
-                  <div className="flex items-center">
-                    <h4>Kansas City</h4>
-                    <Image
-                      src="/caret-down.svg"
-                      alt="caret down icon"
-                      width="8"
-                      height="8"
-                      className="ml-2"
-                    />
-                  </div>
-                </div>
-              </div>
-            </li>
+            <LocationSection />
             <li className="ml-8" id="svg-container">
               <Image
                 src="/heart.svg"

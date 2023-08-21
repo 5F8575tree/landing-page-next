@@ -30,7 +30,11 @@ const Hero = () => {
       className="w-screen h-screen xl:px-48 lg:px-16 md:px-8 sm:px-4 px-4"
       id="hero-image"
     >
-      {isSmallScreen ? <NavbarMobile /> : <Navbar />}
+      {isSmallScreen ? (
+        <NavbarMobile isSmallScreen={isSmallScreen} />
+      ) : (
+        <Navbar />
+      )}
       <Searchbar />
       <div className="h-4/6 flex flex-col md:items-start md:justify-center sm:justify-start mt-10">
         <h2

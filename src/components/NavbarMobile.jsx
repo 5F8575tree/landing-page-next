@@ -2,7 +2,7 @@ import Image from "next/image";
 import { useState } from "react";
 import LocationSection from "./LocationSection";
 
-const NavbarMobile = () => {
+const NavbarMobile = ({ isSmallScreen }) => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
   const handleOnClick = () => {
@@ -28,14 +28,14 @@ const NavbarMobile = () => {
           >
             {menuIsOpen ? (
               <div className="flex flex-col">
-                <div className="flex justify-between">
-                  <Image
+                <div className="flex justify-between sm:ml-0 ml-4">
+                  {/* <Image
                     src="/car_shop_logo.png"
                     alt="company logo"
                     height="60"
                     width="60"
                     className="self-center"
-                  />
+                  /> */}
                   <Image
                     src="/cross.svg"
                     alt="exit icon"
@@ -45,7 +45,7 @@ const NavbarMobile = () => {
                     className="hover:cursor-pointer self-center"
                   />
                 </div>
-                <ul>
+                <ul className="ml-4">
                   <li>Shop</li>
                   <li>Sell/Trade</li>
                   <li>Finance</li>
@@ -57,9 +57,16 @@ const NavbarMobile = () => {
             )}
           </div>
         </div>
+        {/* <Image
+          src="/car_shop_logo.png"
+          alt="company logo"
+          height="30"
+          width="30"
+          className="ml-6"
+        /> */}
       </section>
       <section id="right" className="blue-text flex">
-        <LocationSection />
+        <LocationSection isSmallScreen={isSmallScreen} />
         <ul className="flex items-center">
           <li className="ml-8" id="svg-container">
             <Image
@@ -74,9 +81,9 @@ const NavbarMobile = () => {
             <Image
               src="/user.svg"
               alt="user icon"
-              width="20"
-              height="20"
-              className="cursor-pointer"
+              width="16"
+              height="16"
+              className="cursor-pointer mr-2"
             />
           </li>
         </ul>

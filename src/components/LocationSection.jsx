@@ -1,13 +1,14 @@
 import Image from "next/image";
 import { useState, useRef } from "react";
 
-const LocationSection = () => {
+const LocationSection = ({ isSmallScreen }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const menuRef = useRef(null);
 
   let timeoutId;
 
+  // small screens and above
   const onHover = () => {
     clearTimeout(timeoutId);
     setMenuOpen(true);
@@ -24,6 +25,11 @@ const LocationSection = () => {
     }, 100);
   };
 
+  //mobile screens
+  const handleOnClick = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <li
       className="relative list-none"
@@ -36,8 +42,10 @@ const LocationSection = () => {
           className="
             flex-cols
             absolute
-            -bottom-72
-            right-0
+            top-5
+            sm:-bottom-72
+            -right-8
+            sm:right-0
             w-72
             bg-white
             p-3
@@ -77,23 +85,28 @@ const LocationSection = () => {
         <Image
           src="/map-pin.svg"
           alt="map pin icon"
-          width="20"
-          height="20"
-          className="mr-3 cursor-pointer"
+          width="16"
+          height="16"
+          className="md:mr-3 cursor-pointer"
+          onClick={handleOnClick}
         />
-        <div className="flex-col cursor-pointer">
-          <p className="text-xs font-light">Your store for 66204</p>
-          <div className="flex items-center">
-            <h4>Kansas City</h4>
-            <Image
-              src="/caret-down.svg"
-              alt="caret down icon"
-              width="8"
-              height="8"
-              className="ml-2"
-            />
+        {isSmallScreen ? (
+          <div></div>
+        ) : (
+          <div className="flex-col cursor-pointer">
+            <p className="text-xs font-light">Your store for 66204</p>
+            <div className="flex items-center">
+              <h4>Kansas City</h4>
+              <Image
+                src="/caret-down.svg"
+                alt="caret down icon"
+                width="8"
+                height="8"
+                className="ml-2"
+              />
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </li>
   );

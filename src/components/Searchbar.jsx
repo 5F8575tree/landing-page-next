@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Searchbar = () => {
   return (
-    <section className="searchbar flex justify-center mt-6">
+    <section className="searchbar flex justify-center md:mt-6 mt-4">
       <form action="" className="w-full">
         <div className="relative flex items-center">
           <input
@@ -13,7 +13,7 @@ const Searchbar = () => {
             aria-label="search talk"
             className="
               py-2
-              placeholder-slate-600
+              md:placeholder-slate-600
               hover:placeholder-slate-300
               focus:placeholder-slate-300
               text-black
@@ -22,7 +22,7 @@ const Searchbar = () => {
               ring-2
               ring-slate-300
               w-full
-              drop-shadow-sm
+              drop-shadow-xs
               focus:ring-slate-500
               focus:ring-2
               bg-slate-50
@@ -37,7 +37,7 @@ const Searchbar = () => {
             alt="search icon"
             width="24"
             height="24"
-            className="absolute right-4 sm:right-10 pointer-events-none"
+            className="absolute right-4 sm:right-10 pointer-events-none h-4 md:h-8"
           />
         </div>
       </form>

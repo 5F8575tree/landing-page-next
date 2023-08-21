@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import LocationSection from "./LocationSection";
+import MenuDrawer from "./MenuDrawer";
 
 const NavbarMobile = ({ isSmallScreen }) => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
@@ -27,43 +28,12 @@ const NavbarMobile = ({ isSmallScreen }) => {
             }
           >
             {menuIsOpen ? (
-              <div className="flex flex-col">
-                <div className="flex justify-between sm:ml-0 ml-4">
-                  {/* <Image
-                    src="/car_shop_logo.png"
-                    alt="company logo"
-                    height="60"
-                    width="60"
-                    className="self-center"
-                  /> */}
-                  <Image
-                    src="/cross.svg"
-                    alt="exit icon"
-                    height="20"
-                    width="20"
-                    onClick={handleOnClick}
-                    className="hover:cursor-pointer self-center"
-                  />
-                </div>
-                <ul className="ml-4">
-                  <li>Shop</li>
-                  <li>Sell/Trade</li>
-                  <li>Finance</li>
-                  <li>More</li>
-                </ul>
-              </div>
+              <MenuDrawer handleOnClick={handleOnClick} />
             ) : (
               <div></div>
             )}
           </div>
         </div>
-        {/* <Image
-          src="/car_shop_logo.png"
-          alt="company logo"
-          height="30"
-          width="30"
-          className="ml-6"
-        /> */}
       </section>
       <section id="right" className="blue-text flex">
         <LocationSection isSmallScreen={isSmallScreen} />

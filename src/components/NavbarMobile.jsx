@@ -11,34 +11,52 @@ const NavbarMobile = () => {
 
   return (
     <div className="flex justify-between pt-3">
-      <section className="flex justify-center">
-        {menuIsOpen ? (
-          <div id="top-section">
-            <Image
-              src="/cross.svg"
-              alt="exit icon"
-              height="20"
-              width="20"
-              onClick={handleOnClick}
-              className="hover:cursor-pointer"
-            />
-            <ul>
-              <li>Shop</li>
-              <li>Sell/Trade</li>
-              <li>Finance</li>
-              <li>More</li>
-            </ul>
+      <section className="flex justify-center relative">
+        <Image
+          src="/burger.svg"
+          alt="menu icon"
+          height="20"
+          width="20"
+          onClick={handleOnClick}
+          className="hover:cursor-pointer"
+        />
+        <div id="mobile-menu">
+          <div
+            className={
+              menuIsOpen ? "mobile-menu-is-open" : "mobile-menu-is-closed"
+            }
+          >
+            {menuIsOpen ? (
+              <div className="flex flex-col">
+                <div className="flex justify-between">
+                  <Image
+                    src="/car_shop_logo.png"
+                    alt="company logo"
+                    height="60"
+                    width="60"
+                    className="self-center"
+                  />
+                  <Image
+                    src="/cross.svg"
+                    alt="exit icon"
+                    height="20"
+                    width="20"
+                    onClick={handleOnClick}
+                    className="hover:cursor-pointer self-center"
+                  />
+                </div>
+                <ul>
+                  <li>Shop</li>
+                  <li>Sell/Trade</li>
+                  <li>Finance</li>
+                  <li>More</li>
+                </ul>
+              </div>
+            ) : (
+              <div></div>
+            )}
           </div>
-        ) : (
-          <Image
-            src="/burger.svg"
-            alt="menu icon"
-            height="20"
-            width="20"
-            onClick={handleOnClick}
-            className="hover:cursor-pointer"
-          />
-        )}
+        </div>
       </section>
       <section id="right" className="blue-text flex">
         <LocationSection />

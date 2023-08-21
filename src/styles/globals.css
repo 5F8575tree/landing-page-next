@@ -85,3 +85,14 @@
     background-repeat: no-repeat;
   }
 }
+
+.mobile-menu-is-open {
+  background-color: #ffffff;
+  position: absolute;
+  top: -18px;
+  left: -35px;
+  width: 300px;
+  height: 100vh;
+  z-index: 1000;
+  padding: 16px;
+}

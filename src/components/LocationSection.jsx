@@ -25,7 +25,11 @@ const LocationSection = () => {
   };
 
   return (
-    <li className="relative" onMouseOver={onHover} onMouseLeave={onMouseLeave}>
+    <li
+      className="relative list-none"
+      onMouseOver={onHover}
+      onMouseLeave={onMouseLeave}
+    >
       {menuOpen ? (
         <div
           ref={menuRef}

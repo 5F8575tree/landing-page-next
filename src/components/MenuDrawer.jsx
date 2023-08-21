@@ -2,25 +2,17 @@ import Image from "next/image";
 import { useState } from "react";
 
 const MenuDrawer = ({ handleOnClick }) => {
-  const [openShopMenu, setOpenShopMenu] = useState(true);
-  const [openSellTradeMenu, setOpenSellTradeMenu] = useState(true);
-  const [openFinanceMenu, setOpenFinanceMenu] = useState(true);
-  const [openMoreMenu, setOpenMoreMenu] = useState(false);
+  const [menuItems, setMenuItems] = useState([
+    { label: "Shop", open: true },
+    { label: "Sell/Trade", open: true },
+    { label: "Finance", open: true },
+    { label: "More", open: false },
+  ]);
 
-  const handleOnShopCaretClick = () => {
-    setOpenShopMenu(!openShopMenu);
-  };
-
-  const handleOnSellTradeCaretClick = () => {
-    setOpenSellTradeMenu(!openSellTradeMenu);
-  };
-
-  const handleOnFinanceCaretClick = () => {
-    setOpenFinanceMenu(!openFinanceMenu);
-  };
-
-  const handleOnMoreCaretClick = () => {
-    setOpenMoreMenu(!openMoreMenu);
+  const handleOnCaretClick = (index) => {
+    const newState = [...menuItems];
+    newState[index].open = !newState[index].open;
+    setMenuItems(newState);
   };
 
   return (
@@ -35,143 +27,58 @@ const MenuDrawer = ({ handleOnClick }) => {
           className="hover:cursor-pointer self-center"
         />
       </div>
-      <span className="border-b mt-2"></span>
-      <div>
-        <section className="m-5">
-          <button className="flex items-center justify-between w-full blue-text">
-            <span>Shop</span>
-            {openShopMenu ? (
+      {menuItems.map((menuItem, index) => (
+        <div key={index}>
+          <span className="border-b mt-2"></span>
+          <section className="m-5">
+            <button
+              className="flex items-center justify-between w-full blue-text"
+              onClick={() => handleOnCaretClick(index)}
+            >
+              <span>{menuItem.label}</span>
               <Image
-                src="caret-up.svg"
+                src={menuItem.open ? "caret-up.svg" : "caret-down.svg"}
                 alt="down icon"
                 height="10"
                 width="10"
-                onClick={handleOnShopCaretClick}
               />
-            ) : (
-              <Image
-                src="caret-down.svg"
-                alt="down icon"
-                height="10"
-                width="10"
-                onClick={handleOnShopCaretClick}
-              />
+            </button>
+            {menuItem.open && (
+              <ul className="ml-4 mt-3 flex flex-col gap-3 text-sm text-slate-600">
+                {index === 0 && (
+                  <>
+                    <li>Browse by category</li>
+                    <li>View all inventory</li>
+                    <li>Shop cars near me</li>
+                    <li>Find a store</li>
+                  </>
+                )}
+                {index === 1 && (
+                  <>
+                    <li>Get an instant offer</li>
+                    <li>How it works</li>
+                  </>
+                )}
+                {index === 2 && (
+                  <>
+                    <li>Get pre-qualified</li>
+                    <li>How it works</li>
+                    <li>AutoShop Finance</li>
+                  </>
+                )}
+                {index === 3 && (
+                  <>
+                    <li>Services & repairs</li>
+                    <li>FAQ & support</li>
+                    <li>Why AutoShop</li>
+                    <li>Buying online</li>
+                  </>
+                )}
+              </ul>
             )}
-          </button>
-          {openShopMenu ? (
-            <ul className="ml-4 mt-3 flex flex-col gap-3 text-sm text-slate-600">
-              <li>Browse by category</li>
-              <li>View all inventory</li>
-              <li>Shop cars near me</li>
-              <li>Find a store</li>
-            </ul>
-          ) : (
-            <div></div>
-          )}
-        </section>
-      </div>
-      <span className="border-b mt-2"></span>
-      <div>
-        <section className="m-5">
-          <button className="flex items-center justify-between w-full blue-text">
-            <span>Sell/Trade</span>
-            {openSellTradeMenu ? (
-              <Image
-                src="caret-up.svg"
-                alt="down icon"
-                height="10"
-                width="10"
-                onClick={handleOnSellTradeCaretClick}
-              />
-            ) : (
-              <Image
-                src="caret-down.svg"
-                alt="down icon"
-                height="10"
-                width="10"
-                onClick={handleOnSellTradeCaretClick}
-              />
-            )}
-          </button>
-          {openSellTradeMenu ? (
-            <ul className="ml-4 mt-3 flex flex-col gap-3 text-sm text-slate-600">
-              <li>Get an instant offer</li>
-              <li>How it works</li>
-            </ul>
-          ) : (
-            <div></div>
-          )}
-        </section>
-      </div>
-      <span className="border-b mt-2"></span>
-      <div>
-        <section className="m-5">
-          <button className="flex items-center justify-between w-full blue-text">
-            <span>Finance</span>
-            {openFinanceMenu ? (
-              <Image
-                src="caret-up.svg"
-                alt="down icon"
-                height="10"
-                width="10"
-                onClick={handleOnFinanceCaretClick}
-              />
-            ) : (
-              <Image
-                src="caret-down.svg"
-                alt="down icon"
-                height="10"
-                width="10"
-                onClick={handleOnFinanceCaretClick}
-              />
-            )}
-          </button>
-          {openFinanceMenu ? (
-            <ul className="ml-4 mt-3 flex flex-col gap-3 text-sm text-slate-600">
-              <li>Get pre-qualified</li>
-              <li>How it works</li>
-              <li>AutoShop Finance</li>
-            </ul>
-          ) : (
-            <div></div>
-          )}
-        </section>
-      </div>
-      <span className="border-b mt-2"></span>
-      <div>
-        <section className="m-5">
-          <button className="flex items-center justify-between w-full blue-text">
-            <span>More</span>
-            {openMoreMenu ? (
-              <Image
-                src="caret-up.svg"
-                alt="down icon"
-                height="10"
-                width="10"
-                onClick={handleOnMoreCaretClick}
-              />
-            ) : (
-              <Image
-                src="caret-down.svg"
-                alt="down icon"
-                height="10"
-                width="10"
-                onClick={handleOnMoreCaretClick}
-              />
-            )}
-          </button>
-          {openMoreMenu ? (
-            <ul className="ml-4 mt-3 flex flex-col gap-3 text-sm text-slate-600">
-              <li>Services & repairs</li>
-              <li>FAQ & support</li>
-              <li>Why AutoShop</li>
-              <li>Buying online</li>
-            </ul>
-          ) : (
-            <div></div>
-          )}
-        </section>
-      </div>
+          </section>
+        </div>
+      ))}
     </div>
   );
 };

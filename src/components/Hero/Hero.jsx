@@ -1,8 +1,11 @@
-import Button from "./Button";
+import { useState, useEffect } from "react";
+
+import Button from "../Button";
 import Navbar from "./Navbar";
 import Searchbar from "./Searchbar";
 import NavbarMobile from "./NavbarMobile";
-import { useState, useEffect } from "react";
+import PostSearchMenuMobile from "./PostSearchMenuMobile";
+import FeedbackTag from "../FeedbackTag";
 
 const Hero = () => {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
@@ -28,7 +31,7 @@ const Hero = () => {
 
   return (
     <div
-      className={`w-screen h-screen xl:px-48 lg:px-16 md:px-8 sm:px-4 px-4 ${
+      className={`w-screen h-screen xl:px-48 lg:px-16 md:px-8 sm:px-4 ${
         menuIsOpen ? "overlay-active" : ""
       }`}
       id="hero-image"
@@ -43,6 +46,7 @@ const Hero = () => {
         <Navbar />
       )}
       <Searchbar />
+      {isSmallScreen ? <PostSearchMenuMobile /> : <div></div>}
       <div className="h-4/6 flex flex-col md:items-start md:justify-center sm:justify-start mt-10">
         <h2
           className="
@@ -65,6 +69,7 @@ const Hero = () => {
         </h4>
         <Button />
       </div>
+      <FeedbackTag />
     </div>
   );
 };

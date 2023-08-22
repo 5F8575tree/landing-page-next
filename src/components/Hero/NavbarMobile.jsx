@@ -1,11 +1,10 @@
 import Image from "next/image";
-import { useState } from "react";
 import LocationSection from "./LocationSection";
 import MenuDrawer from "./MenuDrawer";
 
 const NavbarMobile = ({ isSmallScreen, setMenuIsOpen, menuIsOpen }) => {
   return (
-    <div className="flex justify-between pt-3">
+    <div className="flex justify-between pt-3 px-4 sm:px-0">
       <section className="flex justify-center relative">
         <Image
           src="/burger.svg"

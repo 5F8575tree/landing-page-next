@@ -81,7 +81,7 @@
   #hero-image {
     background-image: url(/small_car.jpeg);
     background-size: auto;
-    background-position: top;
+    background-position: -300px 0;
     background-repeat: no-repeat;
   }
 }

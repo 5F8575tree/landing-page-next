@@ -3,13 +3,7 @@ import { useState } from "react";
 import LocationSection from "./LocationSection";
 import MenuDrawer from "./MenuDrawer";
 
-const NavbarMobile = ({ isSmallScreen }) => {
-  const [menuIsOpen, setMenuIsOpen] = useState(false);
-
-  const handleOnClick = () => {
-    setMenuIsOpen(!menuIsOpen);
-  };
-
+const NavbarMobile = ({ isSmallScreen, setMenuIsOpen, menuIsOpen }) => {
   return (
     <div className="flex justify-between pt-3">
       <section className="flex justify-center relative">
@@ -18,7 +12,7 @@ const NavbarMobile = ({ isSmallScreen }) => {
           alt="menu icon"
           height="20"
           width="20"
-          onClick={handleOnClick}
+          onClick={() => setMenuIsOpen(!menuIsOpen)}
           className="hover:cursor-pointer"
         />
         <div id="mobile-menu">
@@ -28,7 +22,10 @@ const NavbarMobile = ({ isSmallScreen }) => {
             }
           >
             {menuIsOpen ? (
-              <MenuDrawer handleOnClick={handleOnClick} />
+              <MenuDrawer
+                setMenuIsOpen={setMenuIsOpen}
+                menuIsOpen={menuIsOpen}
+              />
             ) : (
               <div></div>
             )}

@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 
 const Hero = () => {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
 
   // Function to update isSmallScreen based on screen width
   const updateScreenSize = () => {
@@ -27,11 +28,17 @@ const Hero = () => {
 
   return (
     <div
-      className="w-screen h-screen xl:px-48 lg:px-16 md:px-8 sm:px-4 px-4"
+      className={`w-screen h-screen xl:px-48 lg:px-16 md:px-8 sm:px-4 px-4 ${
+        menuIsOpen ? "overlay-active" : ""
+      }`}
       id="hero-image"
     >
       {isSmallScreen ? (
-        <NavbarMobile isSmallScreen={isSmallScreen} />
+        <NavbarMobile
+          menuIsOpen={menuIsOpen}
+          setMenuIsOpen={setMenuIsOpen}
+          isSmallScreen={isSmallScreen}
+        />
       ) : (
         <Navbar />
       )}

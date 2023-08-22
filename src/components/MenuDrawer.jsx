@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useState } from "react";
 
-const MenuDrawer = ({ handleOnClick }) => {
+const MenuDrawer = ({ menuIsOpen, setMenuIsOpen }) => {
   const [menuItems, setMenuItems] = useState([
     { label: "Shop", open: true },
     { label: "Sell/Trade", open: true },
@@ -23,7 +23,7 @@ const MenuDrawer = ({ handleOnClick }) => {
           alt="exit icon"
           height="20"
           width="20"
-          onClick={handleOnClick}
+          onClick={() => setMenuIsOpen(!menuIsOpen)}
           className="hover:cursor-pointer self-center"
         />
       </div>

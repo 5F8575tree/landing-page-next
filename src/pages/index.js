@@ -1,3 +1,4 @@
+import BudgetSearch from "@/components/BudgetSearch/BudgetSearch";
 import Hero from "@/components/Hero/Hero";
 import { Inter } from "next/font/google";
 
@@ -7,6 +8,7 @@ export default function Home() {
   return (
     <main>
       <Hero />
+      <BudgetSearch />
     </main>
   );
 }

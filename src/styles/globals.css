@@ -86,6 +86,15 @@
   }
 }
 
+@media (max-width: 767px) {
+  #reasons-to-believe {
+    background-image: url(/reasons-to-believe.jpg);
+    background-size: cover;
+    background-position: -600px 0;
+    background-repeat: no-repeat;
+  }
+}
+
 .mobile-menu-is-open {
   background-color: #ffffff;
   position: absolute;

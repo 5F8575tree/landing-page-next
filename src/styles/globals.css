@@ -93,7 +93,7 @@
     background-position: -600px 0;
     background-repeat: no-repeat;
     width: 350px;
-    transition: width 0.9s ease-in-out;
+    transition: width 2s ease-in-out;
   }
 
   #reasons-to-believe.expanded {
@@ -129,6 +129,25 @@
   #carousel-portion.carousel-visible {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  #phone-image {
+    object-fit: cover;
+    width: 350px;
+    transition: width 3s ease-in-out;
+  }
+
+  #phone-image.phone-image-visible {
+    width: 100vw;
+  }
+
+  #instant-offers-form {
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+  }
+
+  #instant-offers-form.form-visible {
+    opacity: 1;
   }
 }
 

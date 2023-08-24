@@ -1,5 +1,6 @@
 import BudgetSearch from "@/components/BudgetSearch/BudgetSearch";
 import Hero from "@/components/Hero/Hero";
+import InstantOffers from "@/components/InstantOffers/InstantOffers";
 import ReasonToBelieve from "@/components/ReasonToBelieve/ReasonToBelieve";
 import SocialProof from "@/components/SocialProof/SocialProof";
 import { Inter } from "next/font/google";
@@ -13,6 +14,7 @@ export default function Home() {
       <BudgetSearch />
       <ReasonToBelieve />
       <SocialProof />
+      <InstantOffers />
     </main>
   );
 }

@@ -55,7 +55,7 @@ const SocialProof = () => {
           A hassle-free kind <br />
           of happy
         </h2>
-        <h4 className=" uppercase text-sm text-blue-400 font-bold mb-1 mt-4 text-center">
+        <h4 className=" uppercase text-sm text-blue-400 font-bold mb-16 mt-4 text-center">
           #showyourbow
         </h4>
       </div>

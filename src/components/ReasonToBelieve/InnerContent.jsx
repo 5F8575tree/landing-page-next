@@ -23,7 +23,7 @@ const InnerContent = () => {
 
   return (
     <div
-      className={`bg-white w-[350px] py-10 mx-8 rounded-xl p-6 flex flex-col items-center absolute top-1/4 ${
+      className={`bg-white w-[350px] py-10 mx-8 rounded-xl p-6 flex flex-col items-center absolute top-1/3 ${
         isVisible ? "visible" : ""
       }`}
       id="reasons-to-believe-inner-container"

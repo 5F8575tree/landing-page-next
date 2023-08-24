@@ -105,7 +105,7 @@
     transition: opacity 2s ease-in-out;
   }
 
-  #reasons-to-believe-inner-container.expanded {
+  #reasons-to-believe-inner-container.visible {
     opacity: 1;
   }
 }

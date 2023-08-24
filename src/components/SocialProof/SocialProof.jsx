@@ -1,8 +1,38 @@
 import Image from "next/image";
 
 import Carousel from "../Carousel";
+import { useEffect, useState } from "react";
 
 const SocialProof = () => {
+  const [titleIsVisible, setTitleIsVisible] = useState(false);
+  const [carouselIsVisible, setCarouselIsVisible] = useState(false);
+
+  const handleScroll = () => {
+    const scrollThresholdForTitle = 2000;
+    const scrollThresholdForCarousel = 2200;
+    if (
+      window.scrollY >= scrollThresholdForTitle &&
+      window.scrollY >= scrollThresholdForCarousel
+    ) {
+      setTitleIsVisible(true);
+      setCarouselIsVisible(true);
+    } else if (window.scrollY >= scrollThresholdForTitle) {
+      setTitleIsVisible(true);
+      setCarouselIsVisible(false);
+    } else {
+      setTitleIsVisible(false);
+      setCarouselIsVisible(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const options = [
     {
       handle: "@nitefvry",
@@ -20,14 +50,21 @@ const SocialProof = () => {
 
   return (
     <div className="mt-16 mb-32 flex flex-col items-center">
-      <h2 className="blue-text text-4xl font-bold text-center">
-        A hassle-free kind <br />
-        of happy
-      </h2>
-      <h4 className=" uppercase text-sm text-blue-400 font-bold mb-1 mt-4">
-        #showyourbow
-      </h4>
-      <div className="lg:w-3/4 w-screen">
+      <div id="title-portion" className={titleIsVisible ? "title-visible" : ""}>
+        <h2 className="blue-text text-4xl font-bold text-center">
+          A hassle-free kind <br />
+          of happy
+        </h2>
+        <h4 className=" uppercase text-sm text-blue-400 font-bold mb-1 mt-4 text-center">
+          #showyourbow
+        </h4>
+      </div>
+      <div
+        id="carousel-portion"
+        className={`lg:w-3/4 w-screen ${
+          carouselIsVisible ? "carousel-visible" : ""
+        }`}
+      >
         <Carousel>
           {options.map((option, index) => {
             return (

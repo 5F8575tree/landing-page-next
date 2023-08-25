@@ -1,4 +1,5 @@
 import BudgetSearch from "@/components/BudgetSearch/BudgetSearch";
+import Footer from "@/components/Footer/Footer";
 import Hero from "@/components/Hero/Hero";
 import InstantOffers from "@/components/InstantOffers/InstantOffers";
 import ReasonToBelieve from "@/components/ReasonToBelieve/ReasonToBelieve";
@@ -17,6 +18,7 @@ export default function Home() {
       <SocialProof />
       <InstantOffers />
       <ResearchArticles />
+      <Footer />
     </main>
   );
 }

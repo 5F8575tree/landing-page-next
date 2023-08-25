@@ -31,7 +31,7 @@ const Hero = () => {
 
   return (
     <div
-      className={`w-screen h-screen xl:px-48 lg:px-16 md:px-8 sm:px-4 ${
+      className={`w-screen h-screen xl:px-48 lg:px-16 md:px-8 sm:px-4 px-2 pt-2 ${
         menuIsOpen ? "overlay-active" : ""
       }`}
       id="hero-image"
@@ -47,7 +47,7 @@ const Hero = () => {
       )}
       <Searchbar />
       {isSmallScreen ? <PostSearchMenuMobile /> : <div></div>}
-      <div className="h-4/6 flex flex-col md:items-start md:justify-center sm:justify-start mt-10">
+      <div className="h-4/6 flex flex-col md:items-start md:justify-center sm:justify-start mt-12">
         <h2
           className="
           font-bold
@@ -64,7 +64,7 @@ const Hero = () => {
           Love Your Car <br />
           Guarantee
         </h2>
-        <h4 className="text-center pt-2 md:text-xl md:text-white text-base text-blue-900 drop-shadow-lg">
+        <h4 className="text-center pt-2 md:text-xl md:text-white text-sm text-blue-900 drop-shadow-lg">
           Take 30 days to love it or return it (up to 1500 mi)
         </h4>
         <Button />

@@ -75,7 +75,7 @@ const InnerContent = () => {
       </ul>
       <a
         href="#"
-        className="bg-red-500 px-20 py-3 uppercase rounded text-white"
+        className="bg-amber-500 hover:bg-amber-400 px-20 py-3 uppercase rounded text-white"
       >
         shop all cars
       </a>

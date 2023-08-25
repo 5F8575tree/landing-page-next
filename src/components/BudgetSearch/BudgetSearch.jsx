@@ -156,7 +156,7 @@ const BudgetSearch = () => {
               </div>
               <a
                 href="#"
-                className="bg-red-500 px-16 py-3 rounded uppercase text-white font-bold hover:cursor-pointer hover-bg-red-400"
+                className="bg-amber-500 px-16 py-3 rounded uppercase text-white hover:cursor-pointer hover-bg-amber-400"
               >
                 Get Pre-Qualified
               </a>

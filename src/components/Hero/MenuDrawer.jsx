@@ -16,7 +16,7 @@ const MenuDrawer = ({ menuIsOpen, setMenuIsOpen }) => {
   };
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col sticky top-4">
       <div className="flex justify-between sm:ml-0 ml-4">
         <Image
           src="/cross.svg"

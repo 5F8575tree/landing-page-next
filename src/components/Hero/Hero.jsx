@@ -57,7 +57,6 @@ const Hero = () => {
           md:text-left
           text-5xl
           text-blue-900
-          drop-shadow-lg
           text-center
           "
         >

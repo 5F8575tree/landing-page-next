@@ -100,7 +100,7 @@
     background-position: -600px 0;
     background-repeat: no-repeat;
     width: 350px;
-    transition: width 2s ease-in-out;
+    transition: width 0.8s ease-in-out;
   }
 
   #reasons-to-believe.expanded {
@@ -109,7 +109,7 @@
 
   #reasons-to-believe-inner-container {
     opacity: 0;
-    transition: opacity 2s ease-in-out;
+    transition: opacity 0.8s ease-in-out;
   }
 
   #reasons-to-believe-inner-container.visible {
@@ -130,7 +130,7 @@
   #carousel-portion {
     opacity: 0;
     transform: translateY(20%);
-    transition: all 1s ease-in-out;
+    transition: all 0.8s ease-in-out;
   }
 
   #carousel-portion.carousel-visible {
@@ -141,7 +141,7 @@
   #phone-image {
     object-fit: cover;
     width: 350px;
-    transition: width 3s ease-in-out;
+    transition: width 0.8s ease-in-out;
   }
 
   #phone-image.phone-image-visible {
@@ -150,7 +150,7 @@
 
   #instant-offers-form {
     opacity: 0;
-    transition: opacity 2s ease-in-out;
+    transition: opacity 0.8s ease-in-out;
   }
 
   #instant-offers-form.form-visible {
@@ -160,7 +160,7 @@
   #research-section-title {
     opacity: 0;
     transform: translateY(25%);
-    transition: all 2s ease-in-out;
+    transition: all 0.8s ease-in-out;
   }
 
   #research-section-title.research-title-visible {
@@ -171,7 +171,7 @@
   #research-section-carousel {
     opacity: 0;
     transform: translateY(25%);
-    transition: all 2s ease-in-out;
+    transition: all 0.8s ease-in-out;
   }
 
   #research-section-carousel.research-carousel-visible {

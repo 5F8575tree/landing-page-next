@@ -7,8 +7,8 @@ const ResearchArticles = () => {
   const [carouselIsVisible, setCarouselIsVisible] = useState(false);
 
   const handleScroll = () => {
-    const titleScrollThreshold = 3500;
-    const carouselScrollthreshold = 3700;
+    const titleScrollThreshold = 3000;
+    const carouselScrollthreshold = 3100;
     if (
       window.scrollY >= titleScrollThreshold &&
       window.scrollY >= carouselScrollthreshold

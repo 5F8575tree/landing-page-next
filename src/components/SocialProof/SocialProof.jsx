@@ -8,8 +8,8 @@ const SocialProof = () => {
   const [carouselIsVisible, setCarouselIsVisible] = useState(false);
 
   const handleScroll = () => {
-    const scrollThresholdForTitle = 2000;
-    const scrollThresholdForCarousel = 2200;
+    const scrollThresholdForTitle = 1800;
+    const scrollThresholdForCarousel = 1900;
     if (
       window.scrollY >= scrollThresholdForTitle &&
       window.scrollY >= scrollThresholdForCarousel
@@ -49,13 +49,13 @@ const SocialProof = () => {
   ];
 
   return (
-    <div className="mt-16 mb-32 flex flex-col items-center">
+    <div className="mt-16 mb-24 flex flex-col items-center">
       <div id="title-portion" className={titleIsVisible ? "title-visible" : ""}>
         <h2 className="blue-text text-4xl font-bold text-center">
           A hassle-free kind <br />
           of happy
         </h2>
-        <h4 className=" uppercase text-sm text-blue-400 font-bold mb-16 mt-4 text-center">
+        <h4 className=" uppercase text-sm text-blue-400 font-bold mb-3 mt-4 text-center">
           #showyourbow
         </h4>
       </div>

@@ -60,7 +60,7 @@ const InstantOffers = () => {
         id="phone-image"
       />
       <div
-        className={`bg-white flex flex-col items-center py-10 px-8 mx-8 absolute top-48 left-0 rounded-xl ${
+        className={`bg-white flex flex-col items-center py-10 px-8 mx-8 absolute top-28 left-0 rounded-xl ${
           formIsVisible ? "form-visible" : ""
         }`}
         id="instant-offers-form"

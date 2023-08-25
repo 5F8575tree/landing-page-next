@@ -46,10 +46,13 @@ const BudgetSearch = () => {
                       `;
 
   return (
-    <section id="budget-calculator-section" className="px-6">
+    <section
+      id="budget-calculator-section"
+      className="px-6 lg:flex lg:justify-center"
+    >
       <div
         id="budget-search-container"
-        className="-mt-8 py-8 bg-white drop-shadow-xl rounded-2xl"
+        className="-mt-8 lg:-mt-24 py-8 bg-white drop-shadow-xl rounded-2xl"
       >
         <h2
           id="budget-search-header"
@@ -59,12 +62,12 @@ const BudgetSearch = () => {
           <br />
           impact to your credit
         </h2>
-        <div id="inner-budget-container">
+        <div id="inner-budget-container" className="lg:p-8">
           <div id="top-row">
             <h2 className="text-xs text-slate-400 ml-8 mt-5">
               What kinds of cars do you want?
             </h2>
-            <div id="carousel" className="md:w-3/4 mx-auto my-2">
+            <div id="carousel" className="md:w-3/4 lg:w-full mx-auto my-2">
               <Carousel>
                 {options.map((option, index) => {
                   return (
@@ -99,7 +102,7 @@ const BudgetSearch = () => {
                 />
                 <label
                   htmlFor="monthly-payment"
-                  className="absolute left-6 text-xs mt-1 text-slate-400"
+                  className="absolute left-6 text-xs mt-1 text-slate-400 lg:ml-8"
                 >
                   Monthly Payment
                 </label>
@@ -115,7 +118,7 @@ const BudgetSearch = () => {
                 />
                 <label
                   htmlFor="down-payment"
-                  className="absolute left-6 text-xs mt-1 text-slate-400"
+                  className="absolute left-6 text-xs mt-1 text-slate-400 lg:ml-8"
                 >
                   Down Payment
                 </label>
@@ -136,7 +139,7 @@ const BudgetSearch = () => {
                 </select>
                 <label
                   htmlFor="credit-score"
-                  className="absolute left-6 text-xs mt-1 text-slate-400"
+                  className="absolute left-6 text-xs mt-1 text-slate-400 lg:ml-8"
                 >
                   Credit Score
                 </label>
@@ -150,13 +153,13 @@ const BudgetSearch = () => {
             <div id="bottom-row-price-section">
               <div
                 id="calculated-value"
-                className="blue-text font-bold text-6xl mt-2 mb-5"
+                className="blue-text font-bold text-6xl mt-2 mb-5 lg:my-6"
               >
                 $20,115
               </div>
               <a
                 href="#"
-                className="bg-amber-500 px-16 py-3 rounded uppercase text-white hover:cursor-pointer hover-bg-amber-400"
+                className="bg-amber-500 px-16 py-3 rounded uppercase text-white hover:cursor-pointer hover:bg-amber-400"
               >
                 Get Pre-Qualified
               </a>

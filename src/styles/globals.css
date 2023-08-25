@@ -184,24 +184,26 @@
   #reasons-to-believe {
     background-image: url(/reasons-to-believe.jpg);
     background-size: cover;
-    background-position: -600px 0;
+    background-position: 0 0;
     background-repeat: no-repeat;
-    width: 350px;
-    transition: width 0.8s ease-in-out;
+    width: 100vw;
+    opacity: 0;
+    transition: opacity 1.8s ease-in-out;
   }
 
   #reasons-to-believe.expanded {
-    width: 100vw;
+    opacity: 1;
   }
 
   #phone-image {
     object-fit: cover;
-    width: 350px;
-    transition: width 0.8s ease-in-out;
+    width: 100vw;
+    opacity: 0;
+    transition: opacity 1.8s ease-in-out;
   }
 
   #phone-image.phone-image-visible {
-    width: 100vw;
+    opacity: 1;
   }
 
   #title-portion {

@@ -60,12 +60,12 @@ const InstantOffers = () => {
         id="phone-image"
       />
       <div
-        className={`bg-white flex flex-col items-center py-10 px-8 mx-8 absolute top-28 md:top-1/3 left-0 md:left-1/4 md:w-1/2 rounded-xl ${
+        className={`bg-white flex flex-col items-center py-10 px-8 mx-8 absolute top-28 md:top-1/3 left-0 md:left-1/4 md:w-1/2 lg:w-[600px] lg:ml-24 lg:top-48 rounded-xl ${
           formIsVisible ? "form-visible" : ""
         }`}
         id="instant-offers-form"
       >
-        <h5 className="blue-text uppercase font-bold">Sell/Trade In</h5>
+        <h5 className="blue-text uppercase font-bold lg:mb-2">Sell/Trade In</h5>
         <h2 className="blue-text text-4xl font-bold">
           Real offers. <br />
           Really fast.
@@ -74,28 +74,28 @@ const InstantOffers = () => {
           <input type="text" className={inputStyle} />
           <label
             htmlFor=""
-            className="absolute left-10 text-xs mt-1 text-slate-400"
+            className="absolute left-10 text-xs mt-1 text-slate-400 lg:ml-4"
           >
             License plate number
           </label>
           <input type="text" className={inputStyle} />
           <label
             htmlFor=""
-            className="absolute left-10 text-xs mt-1 text-slate-400"
+            className="absolute left-10 text-xs mt-1 text-slate-400 lg:ml-4"
           >
             Where&#39;s your car registered?
           </label>
           <input type="text" className={inputStyle} />
           <label
             htmlFor=""
-            className="absolute left-10 text-xs mt-1 text-slate-400"
+            className="absolute left-10 text-xs mt-1 text-slate-400 lg:ml-4"
           >
             What&#39;s your zip code?
           </label>
         </form>
         <a
           href="#"
-          className="uppercase bg-slate-300 text-slate-500 font-bold py-3 mt-6 w-full text-center rounded"
+          className="uppercase bg-slate-300 text-slate-500 font-bold py-3 mt-6 w-full text-center rounded lg:w-[320px] lg:mb-2"
         >
           get started
         </a>

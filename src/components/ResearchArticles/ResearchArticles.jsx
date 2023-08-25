@@ -1,7 +1,37 @@
 import Image from "next/image";
 import Carousel from "../Carousel";
+import { useEffect, useState } from "react";
 
 const ResearchArticles = () => {
+  const [titleIsVisible, setTitleIsVisible] = useState(false);
+  const [carouselIsVisible, setCarouselIsVisible] = useState(false);
+
+  const handleScroll = () => {
+    const titleScrollThreshold = 3500;
+    const carouselScrollthreshold = 3700;
+    if (
+      window.scrollY >= titleScrollThreshold &&
+      window.scrollY >= carouselScrollthreshold
+    ) {
+      setTitleIsVisible(true);
+      setCarouselIsVisible(true);
+    } else if (window.scrollY >= titleScrollThreshold) {
+      setTitleIsVisible(true);
+      setCarouselIsVisible(false);
+    } else {
+      setTitleIsVisible(false);
+      setCarouselIsVisible(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const articles = [
     {
       tag: "Trends",
@@ -32,11 +62,21 @@ const ResearchArticles = () => {
 
   return (
     <div className="my-16 flex flex-col items-center">
-      <h2 className="blue-text text-4xl text-center font-bold mb-16">
+      <h2
+        id="research-section-title"
+        className={`blue-text text-4xl text-center font-bold mb-16 ${
+          titleIsVisible ? "research-title-visible" : ""
+        }`}
+      >
         Research popular <br />
         used cars & SUVs
       </h2>
-      <div id="carousel" className="lg:w-3/4 w-screen">
+      <div
+        id="research-section-carousel"
+        className={`lg:w-3/4 w-screen ${
+          carouselIsVisible ? "research-carousel-visible" : ""
+        }`}
+      >
         <Carousel>
           {articles.map((article, index) => {
             return (

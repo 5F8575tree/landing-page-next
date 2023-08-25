@@ -3,14 +3,14 @@ import Image from "next/image";
 const Footer = () => {
   return (
     <>
-      <div className="bg-blue-900 text-white font-bold p-3 pt-4">
-        <div className="flex flex-col gap-3 mb-4">
+      <div className="bg-blue-900 text-white font-bold p-3 pt-4 md:px-16 md:py-12 md:flex md:flex-col md:items-center">
+        <div className="flex flex-col gap-3 mb-4 self-start">
           <h4>How to Shop</h4>
           <h4>Customer Services</h4>
           <h4>Legal Notices</h4>
           <h4>About Us</h4>
         </div>
-        <div className="bg-blue-600 p-3 rounded mb-4">
+        <div className="bg-blue-600 p-3 rounded mb-4 md:w-1/3">
           <h3 className="text-lg text-yellow-400 drop-shadow-lg">Feedback</h3>
           <h6 className="text-xs font-normal text-slate-300 mt-1">
             Your comments help us improve our website

@@ -64,7 +64,7 @@ const BudgetSearch = () => {
             <h2 className="text-xs text-slate-400 ml-8 mt-5">
               What kinds of cars do you want?
             </h2>
-            <div id="carousel" className="lg:w-3/4 mx-auto my-2">
+            <div id="carousel" className="md:w-3/4 mx-auto my-2">
               <Carousel>
                 {options.map((option, index) => {
                   return (

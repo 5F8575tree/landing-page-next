@@ -30,6 +30,8 @@ const Searchbar = () => {
               pr-3
               sm:pl-10
               pl-2
+              md:placeholder:text-base
+              placeholder:text-sm
               "
           />
           <Image

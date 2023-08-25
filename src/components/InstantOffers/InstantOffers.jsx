@@ -54,13 +54,13 @@ const InstantOffers = () => {
         width="412"
         height="900"
         alt="businesswoman looking at phone and smiling"
-        className={`h-screen ${
+        className={`h-screen md:w-full ${
           phoneImageIsVisible ? "phone-image-visible" : ""
         }`}
         id="phone-image"
       />
       <div
-        className={`bg-white flex flex-col items-center py-10 px-8 mx-8 absolute top-28 left-0 rounded-xl ${
+        className={`bg-white flex flex-col items-center py-10 px-8 mx-8 absolute top-28 md:top-1/3 left-0 md:left-1/4 md:w-1/2 rounded-xl ${
           formIsVisible ? "form-visible" : ""
         }`}
         id="instant-offers-form"

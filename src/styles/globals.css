@@ -180,6 +180,84 @@
   }
 }
 
+@media (min-width: 768px) {
+  #reasons-to-believe {
+    background-image: url(/reasons-to-believe.jpg);
+    background-size: cover;
+    background-position: -600px 0;
+    background-repeat: no-repeat;
+    width: 350px;
+    transition: width 0.8s ease-in-out;
+  }
+
+  #reasons-to-believe.expanded {
+    width: 100vw;
+  }
+
+  #phone-image {
+    object-fit: cover;
+    width: 350px;
+    transition: width 0.8s ease-in-out;
+  }
+
+  #phone-image.phone-image-visible {
+    width: 100vw;
+  }
+
+  #title-portion {
+    opacity: 0;
+    transform: translateY(50%);
+    transition: all 0.8s ease-in-out;
+  }
+
+  #title-portion.title-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  #carousel-portion {
+    opacity: 0;
+    transform: translateY(20%);
+    transition: all 0.8s ease-in-out;
+  }
+
+  #carousel-portion.carousel-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  #instant-offers-form {
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+  }
+
+  #instant-offers-form.form-visible {
+    opacity: 1;
+  }
+
+  #research-section-title {
+    opacity: 0;
+    transform: translateY(25%);
+    transition: all 0.8s ease-in-out;
+  }
+
+  #research-section-title.research-title-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  #research-section-carousel {
+    opacity: 0;
+    transform: translateY(25%);
+    transition: all 0.8s ease-in-out;
+  }
+
+  #research-section-carousel.research-carousel-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .mobile-menu-is-open {
   background-color: #ffffff;
   position: absolute;
